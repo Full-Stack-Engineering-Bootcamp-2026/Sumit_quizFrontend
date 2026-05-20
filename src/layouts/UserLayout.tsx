@@ -1,0 +1,29 @@
+import { Outlet } from "react-router-dom"
+
+import {
+  SidebarProvider,
+  SidebarInset,
+} from "@/components/ui/sidebar"
+
+import UserSidebar from "@/components/layout/UserSidebar"
+import AppFooter from "@/components/layout/AppFooter"
+
+export const UserLayout = () => {
+  return (
+    <SidebarProvider>
+      <UserSidebar />
+
+      <SidebarInset>
+        <div className="flex min-h-screen flex-col">
+          <main className="flex-1 p-6 bg-zinc-50">
+            <Outlet />
+          </main>
+
+          <AppFooter />
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
+  )
+}
+
+export default UserLayout
