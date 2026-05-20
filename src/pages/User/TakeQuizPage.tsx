@@ -206,7 +206,6 @@ export default function TakeQuizPage() {
         </div>
       </div>
 
-      {/* Warning note */}
       <div className="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs">
         <Info className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
         <div>
@@ -217,7 +216,6 @@ export default function TakeQuizPage() {
         </div>
       </div>
 
-      {/* Questions list */}
       <div className="space-y-6">
         {quiz.questions?.map((question, idx) => {
           const versionId = question.questionVersionId
@@ -238,7 +236,6 @@ export default function TakeQuizPage() {
                   {question.questionText}
                 </h3>
 
-                {/* Render Answer Inputs depending on type */}
                 {question.answerType === "text" && (
                   <div className="space-y-2">
                     <Label className="text-xs text-zinc-400 font-semibold uppercase tracking-wider">
@@ -317,7 +314,6 @@ export default function TakeQuizPage() {
         })}
       </div>
 
-      {/* Submit Button */}
       <div className="flex justify-end pt-4">
         <Button
           onClick={handleSubmit}
@@ -336,5 +332,5 @@ export default function TakeQuizPage() {
     </div>
   )
 }
-// touched
+
 

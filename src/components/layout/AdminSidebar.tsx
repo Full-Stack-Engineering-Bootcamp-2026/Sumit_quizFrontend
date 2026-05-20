@@ -67,7 +67,6 @@ export const AdminSidebar = () => {
 
   return (
     <Sidebar className="border-r border-zinc-200">
-      {/* Header */}
       <SidebarHeader className="px-3 py-4">
         <div className="flex items-center gap-3">
           <div className="h-16 w-16 overflow-hidden rounded-xl">
@@ -111,7 +110,6 @@ export const AdminSidebar = () => {
                 </SidebarMenuItem>
               ))}
 
-              {/* Add a direct Logout Button to menu for convenience */}
               <SidebarMenuItem>
                 <SidebarMenuButton
                   onClick={handleLogout}
@@ -128,7 +126,6 @@ export const AdminSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
 
-      {/* Footer / Profile Link */}
       <SidebarFooter className="border-t border-zinc-100 p-4">
         <Link
           to="/admin/profile"

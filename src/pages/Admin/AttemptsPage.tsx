@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { getAttempts } from "@/services/attempt.service"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { toast } from "react-toastify"
-import { Calendar, User, ClipboardList, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
+import { User, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
 
 interface AttemptAnswer {
   questionId: string
@@ -76,7 +75,6 @@ export default function AttemptsPage() {
       ) : (
         <div className="space-y-6">
           {attempts.map((attempt) => {
-            // Let's calculate simple score for single/multi select questions
             let correctCount = 0
             let gradableCount = 0
 
@@ -133,7 +131,6 @@ export default function AttemptsPage() {
                     <AccordionContent className="pt-4 space-y-4 px-2">
                       {attempt.answers?.map((ans, idx) => {
                         const isText = ans.answerType === "text"
-                        // For MCQ, let's see if correctness matches
                         const isCorrect = !isText && ans.selectedOptions?.every((o) => o.isCorrect)
 
                         return (
@@ -166,7 +163,6 @@ export default function AttemptsPage() {
                               {ans.questionText || "Question text at time of attempt"}
                             </p>
 
-                            {/* Submitted Answers detail */}
                             {isText ? (
                               <div className="p-3 bg-white rounded-lg border border-zinc-200 text-sm text-zinc-700 font-medium italic">
                                 "{ans.answerText || "No answer text submitted"}"

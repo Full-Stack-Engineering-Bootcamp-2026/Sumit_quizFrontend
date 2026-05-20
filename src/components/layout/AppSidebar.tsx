@@ -49,8 +49,6 @@ const items = [
 const AppSidebar = () => {
   return (
     <Sidebar className="border-r border-zinc-200">
-      {" "}
-      {/* Header */}
       <SidebarHeader className="px-3 py-4">
         <div className="flex items-center gap-3">
           <div className="h-20 w-20 overflow-hidden rounded-xl">
@@ -65,7 +63,6 @@ const AppSidebar = () => {
             </video>
           </div>
 
-          {/* Title */}
           <div>
             <h2 className="text-lg font-bold text-orange-500">QuizBowser</h2>
 
@@ -95,7 +92,6 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      {/* Footer */}
       <SidebarFooter>
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">

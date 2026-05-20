@@ -43,7 +43,6 @@ export default function QuizzesPage() {
   const [loading, setLoading] = useState(true)
   const [isSheetOpen, setIsSheetOpen] = useState(false)
 
-  // Creation State
   const [title, setTitle] = useState("")
   const [selectedQuestionVersionIds, setSelectedQuestionVersionIds] = useState<string[]>([])
 
@@ -142,7 +141,7 @@ export default function QuizzesPage() {
         </Button>
       </div>
 
-      {/* Quizzes List */}
+
       <div className="grid gap-6 md:grid-cols-2">
         {quizzes.length === 0 ? (
           <div className="col-span-2 text-center py-12 rounded-2xl bg-white border border-zinc-200 text-zinc-400">
@@ -197,7 +196,7 @@ export default function QuizzesPage() {
         )}
       </div>
 
-      {/* Create Quiz Sheet */}
+
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetContent className="w-full overflow-y-auto border-l bg-white px-0 sm:max-w-2xl">
           <div className="flex min-h-full flex-col">
@@ -235,11 +234,7 @@ export default function QuizzesPage() {
                 ) : (
                   <div className="space-y-3 border rounded-xl p-4 bg-zinc-50/50 max-h-[350px] overflow-y-auto border-zinc-200">
                     {questions.map((q) => {
-                      // Note: In backend_audit we returned option ID and history,
-                      // latestVersion publicId is returned on question.history[0] or latest version mapping
-                      // Let's grab the version UUID from history or use item's latest version ID
-                      // Wait! The GET /questions returns questionOutDto, which represents the latest version itself.
-                      // So the latest version ID is simply the question.id (or question.publicId)!
+               
                       const versionId = q.id
                       const isChecked = selectedQuestionVersionIds.includes(versionId)
 
@@ -256,7 +251,7 @@ export default function QuizzesPage() {
                           <input
                             type="checkbox"
                             checked={isChecked}
-                            onChange={() => {}} // handled by parent onClick
+                            onChange={() => {}} 
                             className="mt-1 h-4 w-4 rounded border-zinc-300 accent-orange-500"
                           />
                           <div className="space-y-1">

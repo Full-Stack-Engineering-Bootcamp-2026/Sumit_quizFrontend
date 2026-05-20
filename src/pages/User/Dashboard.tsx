@@ -86,7 +86,6 @@ export default function UserDashboard() {
           </div>
         ) : (
           quizzes.map((quiz) => {
-            // Count number of previous attempts of the current user for this specific quiz
             const userQuizAttempts = attempts.filter(
               (att) => att.quizId === quiz.id && att.userId === user?.publicId
             )

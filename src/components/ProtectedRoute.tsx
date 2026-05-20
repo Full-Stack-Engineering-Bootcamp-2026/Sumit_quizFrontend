@@ -12,12 +12,10 @@ export const ProtectedRoute = ({ allowedRoles }: ProtectedRouteProps) => {
   )
 
   if (!token || !isAuthenticated) {
-    // Not logged in -> Redirect to login page
     return <Navigate to="/" replace />
   }
 
   if (allowedRoles && user && !allowedRoles.includes(user.role.toUpperCase())) {
-    // Logged in but has incorrect role -> Redirect to correct default dashboard
     if (user.role.toUpperCase() === "ADMIN") {
       return <Navigate to="/admin/dashboard" replace />
     } else {
@@ -25,7 +23,6 @@ export const ProtectedRoute = ({ allowedRoles }: ProtectedRouteProps) => {
     }
   }
 
-  // Authorized -> Render page
   return <Outlet />
 }
 

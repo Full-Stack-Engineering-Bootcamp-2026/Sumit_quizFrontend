@@ -8,7 +8,6 @@ export const NotFoundPage = () => {
     (state: RootState) => state.auth
   )
 
-  // Determine standard redirect link
   let redirectUrl = "/"
   if (isAuthenticated && user) {
     if (user.role.toUpperCase() === "ADMIN") {
@@ -28,15 +27,16 @@ export const NotFoundPage = () => {
         Page Not Found
       </h1>
 
-      <p className="mt-4 text-lg text-zinc-500 max-w-md">
+      <p className="mt-4 max-w-md text-lg text-zinc-500">
         The page you are looking for does not exist or has been moved.
       </p>
 
       <div className="mt-8">
-        <Button asChild className="h-12 rounded-2xl bg-orange-500 hover:bg-orange-600 px-8 text-base">
-          <Link to={redirectUrl}>
-            Back to Dashboard
-          </Link>
+        <Button
+          asChild
+          className="h-12 rounded-2xl bg-orange-500 px-8 text-base hover:bg-orange-600"
+        >
+          <Link to={redirectUrl}>Back to Dashboard</Link>
         </Button>
       </div>
     </div>

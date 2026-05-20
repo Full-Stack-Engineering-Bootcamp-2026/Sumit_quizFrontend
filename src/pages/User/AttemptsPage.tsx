@@ -50,7 +50,6 @@ export default function UserAttemptsPage() {
     try {
       setLoading(true)
       const data = await getAttempts()
-      // Filter list to only show attempts of the logged-in user
       const filtered =
         data?.filter((att: Attempt) => att.userId === user?.publicId) || []
       setAttempts(filtered)
@@ -102,7 +101,6 @@ export default function UserAttemptsPage() {
                 new Date(a.submittedAt).getTime()
             )
             .map((attempt) => {
-              // Calculate score for gradable questions (MCQ / Checkboxes)
               let correctCount = 0
               let gradableCount = 0
 

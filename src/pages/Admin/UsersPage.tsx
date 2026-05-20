@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
-import { Shield, Mail, Calendar, User } from "lucide-react"
+import {  Mail, User } from "lucide-react"
 
 interface UserItem {
   publicId: string
