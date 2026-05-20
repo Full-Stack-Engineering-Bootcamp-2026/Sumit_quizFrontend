@@ -70,7 +70,7 @@ const AdminDashboard = () => {
         results[2].status === "fulfilled"
           ? results[2].value.data.data?.length
           : 0
-
+                                        
       const attempts =
         results[3].status === "fulfilled"
           ? results[3].value.data.data?.length

@@ -532,7 +532,6 @@ export default function QuestionManagementPage() {
                   <div className="space-y-3">
                     {formData.options.map((option, idx) => (
                       <div key={option.id} className="flex items-center gap-3">
-                     
                         <div className="flex items-center justify-center">
                           <Checkbox
                             checked={option.isCorrect}
