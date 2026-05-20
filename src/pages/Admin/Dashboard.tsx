@@ -76,7 +76,7 @@ const AdminDashboard = () => {
           ? results[3].value.data.data?.length
           : 0
 
-      setStats({
+      setStats({   
         totalUsers: users,
         totalQuestions: questions,
         totalQuizzes: quizzes,
