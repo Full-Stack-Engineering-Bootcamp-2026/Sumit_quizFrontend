@@ -126,7 +126,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="space-y-8 text-left">
-      {/* Header */}
+
       <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
         <div>
           <h1 className="text-4xl font-bold tracking-tight">Admin Dashboard</h1>
@@ -147,7 +147,7 @@ const AdminDashboard = () => {
         </Button>
       </div>
 
-      {/* Stats */}
+  
       <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {statsCards.map((item) => (
           <Card
